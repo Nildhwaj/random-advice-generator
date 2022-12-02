@@ -25,13 +25,16 @@ class App extends React.Component {
 
     return (
       <div className='app'>
+        {advice && speechSynthesis.speak(new SpeechSynthesisUtterance(advice))}
         <div className='card'>
           <h1 className='heading'>{advice}</h1>
           <button className='btn info' onClick={() => this.fetchAdvice()}>
             <span>GIVE ME AN ADVICE!</span>
           </button>
         </div>
+
       </div>
+
     )
   }
 }
